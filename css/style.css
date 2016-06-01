@@ -1561,6 +1561,7 @@ article {
   padding: 14px 3px 3px 0;
   overflow: hidden;
   position: relative;
+  transition: all .2s ease-in-out;
 }
 
 .case > div:after {
@@ -1577,6 +1578,10 @@ article {
   -ms-transform: rotate(30deg);
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
+}
+
+.case > div:hover {
+  transform: scale(1.1);
 }
 
 .case > div > .logo {
