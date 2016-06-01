@@ -4,4 +4,4 @@
 # dev-dependencies
 solr-6.0.0
 
-node-modules/
+node_modules
