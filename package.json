@@ -1,0 +1,21 @@
+{
+  "name": "movie-search",
+  "version": "1.0.0",
+  "description": "Movie-Search",
+  "main": "index.js",
+  "dependencies": {
+    "requirejs": "^2.2.0",
+    "solr-client": "^0.6.0",
+    "solr-query-builder": "^1.0.1",
+    "util": "^0.10.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.mediacube.at:fhs37222/movie-search.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
