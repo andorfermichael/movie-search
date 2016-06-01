@@ -1,4 +1,13 @@
+# ide
+.idea
+
+# solr
+solr-6.0.0
+
+# build
+tmp
+.sass-cache
+
+# dependencies
 node_modules
-dist
-.tmp
 bower_components
