@@ -26,7 +26,6 @@ function buildHTMLforQuery(results){
 	 .append($('section .shelf .subshelf .hidden-md .hidden-lg'))
 	 */
 }
-
 function buildRow(results){
 	var row = $('section .shelf').append($('div')).append($('div .row'))
 	results.each(function(index) {
@@ -60,10 +59,23 @@ function generateDataAttr(cell,data){
 	return cell;
 }
 
+function generateMovieDetailsBox(element) {
+	var html = $('div .card .col-xs-12 #movie-details')
+		.append('paper-ripple .recenteringTouch').attr('fit','fit');
+	var elementData = element.data();
+	for (var i in data){
+		html.append('div .row')
+			.append('div .col-xs-3 .movie-attr').text(i + ":")
+			.append('div .col-xs-9 .movie-val').text(elementData[i])
+	}
+	//var detailBox = $('<div class="card col-xs-12" id="movie-details"><paper-ripple class="recenteringTouch" fit></paper-ripple></div>');
+	return html;
+}
+
 // Document on load:
 $(function () {
 	$('.movie').on('click',function(){
-		var detailBox = $('<div class="card col-xs-12" id="movie-details"><paper-ripple class="recenteringTouch" fit></paper-ripple></div>');
+		var detailBox = generateMovieDetailsBox($(this));
 		var offsetLeft = $(this).offset().left - $(this).parent().offset().left + ($(this).innerWidth() / 2);
 
 		if ($('#movie-details').length > 0) {
