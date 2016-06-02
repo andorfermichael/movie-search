@@ -116,13 +116,19 @@ module.exports = function(grunt) {
 						cwd: '<%= config.app %>',
 						src: ['assets/video/**/*'],
 						dest: '<%= config.dist %>'
+					},
+					{
+						expand: true,
+						cwd: '<%= config.app %>',
+						src: ['assets/scripts/node/**/*'],
+						dest: '<%= config.dist %>'
 					}
 						]
 					}
     },
 
     eslint: {
-      target: ['<%= config.app %>/assets/scripts/js/*.js']
+      target: ['<%= config.app %>/assets/scripts/js/*.js', '<%= config.app %>/assets/scripts/node/**/*.js']
     },
 
     sass: {
@@ -171,6 +177,10 @@ module.exports = function(grunt) {
         files: ['<%= config.app %>/assets/scripts/js/**/*.js'],
         tasks: ['eslint', 'browserify']
       },
+			node: {
+				files: ['<%= config.app %>/assets/scripts/node/**/*'],
+				tasks: ['eslint', 'copy']
+			},
       templates: {
         files: ['<%= config.app %>/assets/scripts/templates/**/*.hbs'],
         tasks: ['browserify']
