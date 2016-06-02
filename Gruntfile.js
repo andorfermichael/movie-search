@@ -26,7 +26,6 @@ module.exports = function(grunt) {
           },
           transform: [
             'browserify-shim',
-            'hbsfy',
             'babelify',
             'uglifyify'
           ]

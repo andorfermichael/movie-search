@@ -16,14 +16,8 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
 	<meta name="author" content="FREEHTML5.CO"/>
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-
 	<!-- Google Webfont -->
 	<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
 
 	<!-- Google Webfont -->
 	<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
@@ -73,7 +67,7 @@
 
 			<form action="#" class="form-subscribe">
 				<div class="field">
-					<input type="email" class="form-control" placeholder="type in a movie, actor or genre">
+					<input type="text" id="searchValue" class="form-control" placeholder="type in a movie, actor or genre">
 
 					<button class="btn btn-primary">search</button>
 				</div>
@@ -87,151 +81,151 @@
 	<section class="grid-gallery">
 		<div class="container">
 
+			<div id="results"></div>
 
-			<div id="results">
-
-				<section class="shelf">
-					<div>
-						<div class="row">
-							<div class="col-xs-4 col-md-2 movie" id="movie-1">
-								<article class=" case">
-									<div>
-										<div class="img">
-                      <span><img
-												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-                      <span><img
-												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-                      <span><img
-												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<section class="shelf subshelf hidden-md hidden-lg">
+			<section class="shelf">
+				<div>
+					<div class="row">
+						<div class="col-xs-4 col-md-2 movie" id="movie-1">
+							<article class=" case">
 								<div>
+									<div class="img">
+                      <span><img
+												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
+									</div>
 								</div>
-							</section>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
+							</article>
+						</div>
+						<div class="col-xs-4 col-md-2 movie">
+							<article class=" case">
+								<div>
+									<div class="img">
                       <span><img
 												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
 									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
+								</div>
+							</article>
+						</div>
+						<div class="col-xs-4 col-md-2 movie">
+							<article class=" case">
+								<div>
+									<div class="img">
                       <span><img
 												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
 									</div>
-								</article>
+								</div>
+							</article>
+						</div>
+						<section class="shelf subshelf hidden-md hidden-lg">
+							<div>
 							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
+						</section>
+						<div class="col-xs-4 col-md-2 movie">
+							<article class=" case">
+								<div>
+									<div class="img">
                       <span><img
 												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
 									</div>
-								</article>
-							</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-xs-4 col-md-2 movie">
+							<article class=" case">
+								<div>
+									<div class="img">
+                      <span><img
+												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-xs-4 col-md-2 movie">
+							<article class=" case">
+								<div>
+									<div class="img">
+                      <span><img
+												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
+									</div>
+								</div>
+							</article>
 						</div>
 					</div>
-				</section>
+				</div>
+			</section>
 
-				<section class="shelf">
-					<div>
-						<div class="row">
-							<div class="col-xs-4 col-md-2 movie" id="movie-1">
-								<article class=" case">
-									<div>
-										<div class="img">
-                      <span><img
-												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-                      <span><img
-												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-                      <span><img
-												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<section class="shelf subshelf hidden-md hidden-lg">
+			<section class="shelf">
+				<div>
+					<div class="row">
+						<div class="col-xs-4 col-md-2 movie" id="movie-1">
+							<article class=" case">
 								<div>
+									<div class="img">
+                      <span><img
+												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
+									</div>
 								</div>
-							</section>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
+							</article>
+						</div>
+						<div class="col-xs-4 col-md-2 movie">
+							<article class=" case">
+								<div>
+									<div class="img">
                       <span><img
 												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
 									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
+								</div>
+							</article>
+						</div>
+						<div class="col-xs-4 col-md-2 movie">
+							<article class=" case">
+								<div>
+									<div class="img">
                       <span><img
 												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
 									</div>
-								</article>
+								</div>
+							</article>
+						</div>
+						<section class="shelf subshelf hidden-md hidden-lg">
+							<div>
 							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
+						</section>
+						<div class="col-xs-4 col-md-2 movie">
+							<article class=" case">
+								<div>
+									<div class="img">
                       <span><img
 												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
 									</div>
-								</article>
-							</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-xs-4 col-md-2 movie">
+							<article class=" case">
+								<div>
+									<div class="img">
+                      <span><img
+												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-xs-4 col-md-2 movie">
+							<article class=" case">
+								<div>
+									<div class="img">
+                      <span><img
+												src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
+									</div>
+								</div>
+							</article>
 						</div>
 					</div>
-				</section>
-
+				</div>
+			</section>
+		</div>
+	</section>
 </main>
 
 <footer role="contentinfo" id="fh5co-footer">
