@@ -4,6 +4,7 @@
   "description": "single page app for search imdb movies based on solr search",
   "main": "app/index.html",
   "scripts": {
+		"start": "node index.js",
     "test": "mocha"
   },
   "author": "Michael Andorfer, Nicola Deufemia, Vera Karl, Stefanie Habersatter",
@@ -38,6 +39,12 @@
     "page": "^1.6.4",
     "serve-static": "^1.10.0",
     "time-grunt": "^1.2.2",
-    "uglifyify": "^3.0.1"
-  }
+    "uglifyify": "^3.0.1",
+		"should": "^8.3.1",
+		"solrjs": "^0.7.0"
+  },
+	"dependencies": {
+		"express": "^4.13.4",
+		"socket.io": "^1.4.5"
+	}
 }
