@@ -1,3 +1,14 @@
 {
-  "generator-mocha": {}
+  "generator-base-project": {
+    "name": "movie-search",
+    "description": "single page app for search imdb movies based on solr search",
+    "title": "Movie Search",
+    "author": "Michael Andorfer, Nicola Deufemia, Vera Karl, Stefanie Habersatter",
+    "license": "MIT",
+    "main": "app/index.html",
+    "engine": [
+      "^5.0.0",
+      "^3.0.0"
+    ]
+  }
 }
