@@ -8,6 +8,7 @@
 solr-6.0.0
 
 # build
+.tmp
 tmp
 .sass-cache
 dist
