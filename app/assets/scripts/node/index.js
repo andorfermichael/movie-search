@@ -32,7 +32,8 @@ io.on('connection', function(socket){
 			if(err){
 				console.log(err);
 			}else{
-				socket.emit('getQueryObjects', JSON.stringify(obj));
+				console.log(obj);
+				io.emit('getQueryObjects', obj);
 			}
 		});
 	})

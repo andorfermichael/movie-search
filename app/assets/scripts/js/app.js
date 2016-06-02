@@ -6,12 +6,7 @@ $(document).ready(function() {
 		socket.emit('searchValue', searchValue)
 	});
 
-	socket.on('getQueryObjects', function(obj){
-		console.log(obj);
-	});
-
 	
-
 });
 
 

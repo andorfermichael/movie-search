@@ -1,6 +1,8 @@
 /**
  * Created by Nico on 02.06.2016.
  */
+var socket = io();
+
 
 function buildHTMLforQuery(results){
 	var html = $('');
@@ -74,6 +76,11 @@ function generateMovieDetailsBox(element) {
 
 // Document on load:
 $(function () {
+	socket.on('getQueryObjects', function(obj){
+		console.log(obj);
+		buildHTMLforQuery(obj.response.docs);
+	});
+
 	$('.movie').on('click',function(){
 		var detailBox = generateMovieDetailsBox($(this));
 		var offsetLeft = $(this).offset().left - $(this).parent().offset().left + ($(this).innerWidth() / 2);
