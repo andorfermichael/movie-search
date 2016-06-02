@@ -6,13 +6,13 @@ import $ from 'jquery';
 function buildHTMLforQuery(results){
 	var html = $('');
 	var blocks = [];
-	results.each(function(index) {
-		blocks.push($(this));
+	for (var i = 0; i < results.length; i++){
+		blocks.push(results[i]);
 		if (index % 5 == 0) {
 			html.append(buildRow(blocks));
 			blocks = [];
 		}
-	})
+	}
 	$('#results').html(html);
 
 	/* this is demo content of html if one entire row is built:
@@ -28,10 +28,10 @@ function buildHTMLforQuery(results){
 	 */
 }
 function buildRow(results){
-	var row = $('section .shelf').append($('div')).append($('div .row'))
-	results.each(function(index) {
-		row.append(buildRowCell($(this)))
-	})
+	var row = $('section .shelf').append($('div')).append($('div .row'));
+	for (var i = 0; i < results.length; i++){
+		row.append(buildRowCell(results[i]))
+	}
 	return row;
 }
 
