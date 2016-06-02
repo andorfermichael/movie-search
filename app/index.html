@@ -69,7 +69,7 @@
 				<div class="field">
 					<input type="text" id="searchValue" class="form-control" placeholder="type in a movie, actor or genre">
 
-					<button class="btn btn-primary">search</button>
+					<input type="submit" class="btn btn-primary">search</input>
 				</div>
 			</form>
 			<p></p>
@@ -249,10 +249,10 @@
 <!-- Go To Top -->
 <a href="#" class="fh5co-gotop"><i class="ti-shift-left"></i></a>
 
-<script src="assets/scripts/js/app.js"></script>
+<!--<script src="assets/scripts/js/app.js"></script>-->
 
 <!-- Main JS -->
-<script>
+<!--<script>
 	$(function () {
 		$('.movie').on('click',function(){
 			var detailBox = $('<div class="card col-xs-12" id="movie-details"><paper-ripple class="recenteringTouch" fit></paper-ripple></div>');
@@ -291,7 +291,10 @@
 			}
 		});
 	});
-</script>
+</script>-->
+
+<script type="text/javascript" src="socket.io/socket.io.js"></script>
+<script type="text/javascript" src="assets/scripts/js/app.js"></script>
 
 </body>
 </html>
