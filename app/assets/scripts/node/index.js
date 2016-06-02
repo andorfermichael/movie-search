@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000
 app.use(express.static('../../../../dist'));
 
 http.listen(port, function(){
-	console.log(`webserver listening on *:${port}`)
+	console.log('webserver listening on *:${port}');
 })
 
 io.on('connection', function(socket){
@@ -27,12 +27,12 @@ io.on('connection', function(socket){
 		var query2 = client.createQuery()
 			.q({title : value})
 			.start(0)
-			.rows(1000);
+			.rows(18);
 		client.search(query2,function(err,obj){
 			if(err){
 				console.log(err);
 			}else{
-				console.log(JSON.stringify(obj));
+				socket.emit('getQueryObjects', JSON.stringify(obj));
 			}
 		});
 	})

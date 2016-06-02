@@ -1,7 +1,6 @@
 /**
  * Created by Nico on 02.06.2016.
  */
-import $ from 'jquery';
 
 function buildHTMLforQuery(results){
 	var html = $('');
