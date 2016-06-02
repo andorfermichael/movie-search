@@ -256,17 +256,17 @@
 	$(function () {
 		$('.movie').on('click',function(){
 			var detailBox = $('<div class="card col-xs-12" id="movie-details"><paper-ripple class="recenteringTouch" fit></paper-ripple></div>');
+			var offsetLeft = $(this).offset().left - $(this).parent().offset().left + ($(this).innerWidth() / 2);
+
 			if ($('#movie-details').length > 0) {
 				$('#movie-details').remove();
 				$('.subshelf').removeClass('shiftdown');
 			}
-			var offsetLeft = $(this).offset().left;
 			if (window.innerWidth >= 991) {
 				document.styleSheets[0].addRule('.card:after, .card:before', 'left: ' + offsetLeft + 'px;' + '');
 				$(this).parent().prepend(detailBox);
 			}
 			else {
-				offsetLeft += ($(this).width() / 2);
 				if ($(this).index() < 3) {
 					//nerest shelf is main shelf (new row)
 					console.log("Movie is on Subshelf - Index: " + $(this).index());
