@@ -255,19 +255,38 @@
 <script>
 	$(function () {
 		$('.movie').on('click',function(){
+			var detailBox = $('<div class="card col-xs-12" id="movie-details"><paper-ripple class="recenteringTouch" fit></paper-ripple></div>');
 			if ($('#movie-details').length > 0) {
 				$('#movie-details').remove();
+				$('.subshelf').removeClass('shiftdown');
 			}
 			var offsetLeft = $(this).offset().left;
-			document.styleSheets[0].addRule('.card:after, .card:before', 'left: ' + offsetLeft + 'px;' + '');
-			$(this).parent().prepend($('<div class="card col-xs-12" id="movie-details"><paper-ripple class="recenteringTouch" fit></paper-ripple></div>'));
-			$(this).parent().children('.subshelf').toggleClass('shiftdown');
+			if (window.innerWidth >= 991) {
+				document.styleSheets[0].addRule('.card:after, .card:before', 'left: ' + offsetLeft + 'px;' + '');
+				$(this).parent().prepend(detailBox);
+			}
+			else {
+				offsetLeft += ($(this).width() / 2);
+				if ($(this).index() < 3) {
+					//nerest shelf is main shelf (new row)
+					console.log("Movie is on Subshelf - Index: " + $(this).index());
+					document.styleSheets[0].addRule('.card:after, .card:before', 'left: ' + offsetLeft + 'px;' + '');
+					$(this).siblings(".subshelf").toggleClass('shiftdown');
+					$(this).parent().prepend(detailBox);
+				}
+				else {
+					//nearest shelf is subshelf
+					console.log("Movie is on Mainshelf - Index: " + $(this).index());
+					document.styleSheets[0].addRule('.card:after, .card:before', 'left: ' + offsetLeft + 'px;' + '');
+					$(this).parent().find('section').after(detailBox); //toggleClass('shiftdown');
+				}
+			}
 		});
 		$(document).on('click', function(event) {
 			if (!$(event.target).closest('.movie').length) {
 				if ($('#movie-details').length > 0) {
 					$('#movie-details').remove();
-					$('.shelf .subshelf .shiftdown').toggleClass('shiftdown');
+					$('.subshelf').removeClass('shiftdown');
 				}
 			}
 		});
