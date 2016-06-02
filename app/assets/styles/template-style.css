@@ -1720,6 +1720,7 @@ article {
   box-shadow: -8px 8px 8px 0 rgba(0, 0, 0, 0.12);
   z-index: 5;
 }
+
 .card:before {
   border: solid transparent;
   border-width: 36px;
@@ -1764,3 +1765,8 @@ article {
   -o-transition: all 1.0s ease;
   transition: all 1.0s ease;
 }
+
+.shiftdown {
+	margin-top:	364px;
+}
+

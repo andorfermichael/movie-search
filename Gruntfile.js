@@ -176,10 +176,15 @@ module.exports = function(grunt) {
         files: ['<%= config.app %>/assets/scripts/templates/**/*.hbs'],
         tasks: ['browserify']
       },
-      styles: {
+      sassstyles: {
         files: ['<%= config.app %>/assets/styles/*.scss'],
         tasks: ['sass']
       },
+			styles: {
+				files: ['<%= config.app %>/assets/styles/*.css'],
+					tasks: ['copy']
+			},
+
       gruntfile: {
         files: ['Gruntfile.js', 'package.json']
       }
