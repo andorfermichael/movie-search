@@ -9,7 +9,7 @@ function buildHTMLforQuery(results){
 	var blocks = [];
 	for (var i = 0; i < results.length; i++){
 		blocks.push(results[i]);
-		if (index % 5 == 0) {
+		if (i % 5 == 0) {
 			html.append(buildRow(blocks));
 			blocks = [];
 		}
