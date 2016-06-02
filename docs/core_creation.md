@@ -1,5 +1,5 @@
 'Put the movies.json in the right directory'
-Go to solr-6.0.0/examples and create a new directory movies
+Go to solr-6.0.0/example and create a new directory movies
 Place the movies.json inside this directory
 
 'Stop all instances of solr server'
@@ -26,7 +26,7 @@ curl http://localhost:8983/solr/movies/schema -X POST -H 'Content-type:applicati
     }
 }'
 
-'Create an index' 
+'Create an index'
 bin/post -c movies example/movies/movies.json
 
 'Add a genre filter'
