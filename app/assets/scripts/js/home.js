@@ -3,19 +3,22 @@
  */
 var socket = io();
 
+var detailShownAttributes = ['Title','Outline','Actor','Director','Year','Genre','Runtime'];
 
 function buildHTMLforQuery(results){
-	var html = $('');
+	var html = $('#results').html('');
 	var blocks = [];
 	for (var i = 0; i < results.length; i++){
 		blocks.push(results[i]);
-		if (i % 5 == 0) {
+		if (blocks.length == 6) {
 			html.append(buildRow(blocks));
 			blocks = [];
 		}
+		else if (i == results.length - 1) {
+			html.append(buildRow(blocks));
+		}
 	}
-	$('#results').html(html);
-
+	createEventListener();
 	/* this is demo content of html if one entire row is built:
 	 $('section .shelf').append($('div')).append($('div .row'))
 	 .append($('div .col-xs-4 .col-md-2 .movie #' + item.id))
@@ -29,20 +32,27 @@ function buildHTMLforQuery(results){
 	 */
 }
 function buildRow(results){
-	var row = $('section .shelf').append($('div')).append($('div .row'));
-	for (var i = 0; i < results.length; i++){
-		row.append(buildRowCell(results[i]))
+	var row = $('<div>').addClass('row');
+	for (var i = 1; i <= results.length; i++){
+		row.append(buildRowCell(results[i-1]));
+		if (i % 3 == 0 && i != results.length)
+			row.append($('<section>').addClass('shelf subshelf hidden-md hidden-lg')
+				.append($('<div>')));
 	}
-	return row;
+	var output = $('<section>').addClass('shelf')
+		.append($('<div>')
+			.append($(row)));
+	return output;
 }
 
 function buildRowCell(item){
-	var cell = $('div .col-xs-4 .col-md-2 .movie #' + item.id)
-		.append($('article.case'))
-		.append($('div'))
-		.append($('div .img'))
-		.append($('span'))
-		.append($('img').attr('src',item.image_url));
+	console.log(item);
+	var cell = $('<div>').addClass('col-xs-4 col-md-2 movie').attr('id',item.id)
+		.append($('<article>').addClass('case')
+			.append($('<div>')
+				.append($('<div>').addClass('img')
+					.append($('<span>')
+						.append($('<img>').attr('src',item.image_url))))));
 	return generateDataAttr(cell,item);
 }
 
@@ -62,25 +72,19 @@ function generateDataAttr(cell,data){
 }
 
 function generateMovieDetailsBox(element) {
-	var html = $('div .card .col-xs-12 #movie-details')
-		.append('paper-ripple .recenteringTouch').attr('fit','fit');
-	var elementData = element.data();
-	for (var i in data){
-		html.append('div .row')
-			.append('div .col-xs-3 .movie-attr').text(i + ":")
-			.append('div .col-xs-9 .movie-val').text(elementData[i])
+	var html = $('<div>').addClass('card col-xs-12').attr('id','movie-details')
+		.append($('paper-ripple').addClass('recenteringTouch').attr('fit','fit'));
+	for (var i = 0; i < detailShownAttributes.length; i++){
+		html.append($('<div>').addClass('row')
+			.append($('<div>').addClass('col-xs-3 movie-attr').text(detailShownAttributes[i] + ":"))
+			.append($('<div>').addClass('col-xs-9 movie-val').text($(element).data("data-movie-" + detailShownAttributes[i].toLowerCase()))));
 	}
 	//var detailBox = $('<div class="card col-xs-12" id="movie-details"><paper-ripple class="recenteringTouch" fit></paper-ripple></div>');
+
 	return html;
 }
 
-// Document on load:
-$(function () {
-	socket.on('getQueryObjects', function(obj){
-		console.log(obj);
-		buildHTMLforQuery(obj.response.docs);
-	});
-
+function createEventListener() {
 	$('.movie').on('click',function(){
 		var detailBox = generateMovieDetailsBox($(this));
 		var offsetLeft = $(this).offset().left - $(this).parent().offset().left + ($(this).innerWidth() / 2);
@@ -116,5 +120,12 @@ $(function () {
 				$('.subshelf').removeClass('shiftdown');
 			}
 		}
+	});
+}
+// Document on load:
+$(function () {
+	socket.on('getQueryObjects', function(obj){
+		console.log(obj);
+		buildHTMLforQuery(obj.response.docs);
 	});
 });
