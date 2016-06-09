@@ -8,28 +8,22 @@ var detailShownAttributes = ['Title','Outline','Actor','Director','Year','Genre'
 function buildHTMLforQuery(results){
 	var html = $('#results').html('');
 	var blocks = [];
-	for (var i = 0; i < results.length; i++){
-		blocks.push(results[i]);
-		if (blocks.length == 6) {
-			html.append(buildRow(blocks));
-			blocks = [];
+	if (results.length == 0)
+		$('#results').append('<h3>').text('0 results for: "' + $('#searchValue').val() + '"');
+	else {
+		for (var i = 0; i < results.length; i++){
+			blocks.push(results[i]);
+			if (blocks.length == 6) {
+				html.append(buildRow(blocks));
+				blocks = [];
+			}
+			else if (i == results.length - 1) {
+				html.append(buildRow(blocks));
+			}
 		}
-		else if (i == results.length - 1) {
-			html.append(buildRow(blocks));
-		}
+		createEventListener();
 	}
-	createEventListener();
-	/* this is demo content of html if one entire row is built:
-	 $('section .shelf').append($('div')).append($('div .row'))
-	 .append($('div .col-xs-4 .col-md-2 .movie #' + item.id))
-	 .append($('article.case'))
-	 .append($('div'))
-	 .append($('div .img'))
-	 .append($('span'))
-	 .append($('img').attr('src',item.image_url))
-
-	 .append($('section .shelf .subshelf .hidden-md .hidden-lg'))
-	 */
+	scrollDownToResults();
 }
 function buildRow(results){
 	var row = $('<div>').addClass('row');
@@ -52,7 +46,7 @@ function buildRowCell(item){
 			.append($('<div>')
 				.append($('<div>').addClass('img')
 					.append($('<span>')
-						.append($('<img>').attr('src',item.image_url))))));
+						.append($('<img>').attr('src',item.image_url).addClass('movieCover'))))));
 	return generateDataAttr(cell,item);
 }
 
@@ -72,16 +66,43 @@ function generateDataAttr(cell,data){
 }
 
 function generateMovieDetailsBox(element) {
-	var html = $('<div>').addClass('card col-xs-12').attr('id','movie-details')
-		.append($('paper-ripple').addClass('recenteringTouch').attr('fit','fit'));
-	for (var i = 0; i < detailShownAttributes.length; i++){
-		html.append($('<div>').addClass('row')
-			.append($('<div>').addClass('col-xs-3 movie-attr').text(detailShownAttributes[i] + ":"))
-			.append($('<div>').addClass('col-xs-9 movie-val').text($(element).data("data-movie-" + detailShownAttributes[i].toLowerCase()))));
-	}
-	//var detailBox = $('<div class="card col-xs-12" id="movie-details"><paper-ripple class="recenteringTouch" fit></paper-ripple></div>');
-
+	console.log($(element).data());
+	var html = $('<div>').addClass('card col-xs-12').attr('id','movie-details');
+	html.append($('<div>').addClass('col-xs-12 movie-val')
+				.append($('<h2>').text($(element).data("data-movie-title"))))
+	.append($('<div>').addClass('row')
+		.append($('<div>').addClass('col-xs-12 movie-val')
+			.append($('<p>').addClass('outline').text($(element).data("data-movie-outline")))))
+	.append($('<div>').addClass('row')
+		.append($('<div>').addClass('col-xs-2 movie-attr')
+			.append($('<h5>').text('Actor:')))
+		.append($('<div>').addClass('col-xs-4 movie-val')
+			.append($('<p>').text($(element).data("data-movie-actor"))))
+		.append($('<div>').addClass('col-xs-2 movie-attr')
+			.append($('<h5>').text('Director:')))
+		.append($('<div>').addClass('col-xs-4 movie-val')
+			.append($('<p>').text($(element).data("data-movie-director")))))
+	.append($('<div>').addClass('row')
+		.append($('<div>').addClass('col-xs-2 movie-attr')
+			.append($('<h5>').text('Year:')))
+		.append($('<div>').addClass('col-xs-4 movie-val')
+			.append($('<p>').text($(element).data("data-movie-year"))))
+		.append($('<div>').addClass('col-xs-2 movie-attr')
+			.append($('<h5>').text('Genre:')))
+		.append($('<div>').addClass('col-xs-4 movie-val')
+			.append($('<p>').text($(element).data("data-movie-genre")))))
+	.append($('<div>').addClass('row')
+		.append($('<div>').addClass('col-xs-2 movie-attr')
+			.append($('<h5>').text('Runtime:')))
+		.append($('<div>').addClass('col-xs-4 movie-val')
+			.append($('<p>').text($(element).data("data-movie-runtime")))));
 	return html;
+}
+
+function scrollDownToResults() {
+	$('html, body').animate({
+		scrollTop: $("#results").offset().top - ($("#searchValue").offset().top / 2)
+	}, 2000);
 }
 
 function createEventListener() {
@@ -121,6 +142,11 @@ function createEventListener() {
 			}
 		}
 	});
+	$('img.movieCover')
+		.on('error',function(){
+			console.log("Cover not found! Using placeholder!");
+			$(this).attr('src','assets/images/nocoverimage.png');
+		});
 }
 // Document on load:
 $(function () {
@@ -128,4 +154,5 @@ $(function () {
 		console.log(obj);
 		buildHTMLforQuery(obj.response.docs);
 	});
+	$("#searchValue").focus();
 });

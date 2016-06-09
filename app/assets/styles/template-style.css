@@ -1764,9 +1764,45 @@ article {
   -ms-transition: all 1.0s ease;
   -o-transition: all 1.0s ease;
   transition: all 1.0s ease;
+	height: auto;
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+	color: #6a421f;
+	font-family: 'Lato, sans-serif';
+}
+
+h5 {
+	font-weight: bold;
+	color: #6a421f;
+}
+
+.outline {
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+p {
+	margin-top: 7px;
 }
 
 .shiftdown {
 	margin-top:	364px;
 }
+
+#searchValue {
+	position: relative;
+	left: 50%;
+	transform: translateX(-60%);
+}
+
+#searchButton {
+	position: relative;
+	left: 100%;
+	transform: translateX(-110%);
+	margin-top: -60px;
+}
+
+
 

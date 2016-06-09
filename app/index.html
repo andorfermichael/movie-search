@@ -42,15 +42,6 @@
 					 aria-expanded="false" aria-controls="navbar"><i></i></a>
 				<a class="navbar-brand" href="index.html">Movie Search</a>
 			</div>
-			<div id="fh5co-navbar" class="navbar-collapse collapse">
-				<!--            <ul class="nav navbar-nav">
-                      <li><a href="inside-page.html">Inside Page</a></li>
-                      <li><a href="elements.html">Elements</a></li>
-                    </ul>-->
-				<!--          <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" class="btn btn-calltoaction btn-primary">Get in touch</a></li>
-                  </ul>-->
-			</div>
 		</div>
 	</nav>
 
@@ -59,17 +50,16 @@
 <div id="fh5co-hero" style="background-image: url(assets/images/movie1.jpg)">
 	<!--<div class="overlay"></div>-->
 
-	<div class="container">
+	<div class="container mainView">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="text">
-				<h1> Movie Search</h1>
+				<h1>Movie Search</h1>
 			</div>
 
-			<form action="#" class="form-subscribe">
+			<form action="#" class="form-subscribe" id="searchForm" onsubmit="return false;">
 				<div class="field">
 					<input type="text" id="searchValue" class="form-control" placeholder="type in a movie, actor or genre">
-
-					<input type="submit" class="btn btn-primary">search</input>
+					<input type="submit" class="btn btn-primary" id="searchButton">
 				</div>
 			</form>
 			<p></p>
@@ -80,153 +70,7 @@
 <main role="main" id="fh5co-main">
 	<section class="grid-gallery">
 		<div class="container">
-
-			<div id="results">
-
-				<section class="shelf">
-					<div>
-						<div class="row">
-							<div class="col-xs-4 col-md-2 movie" id="movie-1">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<section class="shelf subshelf hidden-md hidden-lg">
-								<div>
-								</div>
-							</section>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="shelf">
-					<div>
-						<div class="row">
-							<div class="col-xs-4 col-md-2 movie" id="movie-1">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<section class="shelf subshelf hidden-md hidden-lg">
-								<div>
-								</div>
-							</section>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-							<div class="col-xs-4 col-md-2 movie">
-								<article class=" case">
-									<div>
-										<div class="img">
-												<span><img
-													src="http://ia.media-imdb.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX182_CR0, 0, 182, 268AL_.jpg"></span>
-										</div>
-									</div>
-								</article>
-							</div>
-						</div>
-					</div>
-				</section>
-
-			</div>
-
+			<div id="results"></div>
 		</div>
 	</section>
 </main>
@@ -238,7 +82,7 @@
 			<div class="col-md-12">
 				<div class="copyright">
 					<p class="text-center">
-						<small>A Free HTML5 Template by
+						<small>Based on a Free HTML5 Template by
 							<a href="http://freehtml5.co/">FREEHTML5.co</a> Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a><br> &copy;
 							2015 Display. All Rights Reserved.
 						</small>
