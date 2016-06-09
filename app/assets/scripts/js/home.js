@@ -1,6 +1,3 @@
-/**
- * Created by Nico on 02.06.2016.
- */
 var socket = io();
 
 var detailShownAttributes = ['Title','Outline','Actor','Director','Year','Genre','Runtime'];
@@ -40,7 +37,6 @@ function buildRow(results){
 }
 
 function buildRowCell(item){
-	console.log(item);
 	var cell = $('<div>').addClass('col-xs-4 col-md-2 movie').attr('id',item.id)
 		.append($('<article>').addClass('case')
 			.append($('<div>')
@@ -66,7 +62,6 @@ function generateDataAttr(cell,data){
 }
 
 function generateMovieDetailsBox(element) {
-	console.log($(element).data());
 	var html = $('<div>').addClass('card col-xs-12').attr('id','movie-details');
 	html.append($('<div>').addClass('col-xs-12 movie-val')
 				.append($('<h2>').text($(element).data("data-movie-title"))))
@@ -120,15 +115,11 @@ function createEventListener() {
 		}
 		else {
 			if ($(this).index() < 3) {
-				//nerest shelf is main shelf (new row)
-				console.log("Movie is on Subshelf - Index: " + $(this).index());
 				document.styleSheets[0].addRule('.card:after, .card:before', 'left: ' + offsetLeft + 'px;' + '');
 				$(this).siblings(".subshelf").toggleClass('shiftdown');
 				$(this).parent().prepend(detailBox);
 			}
 			else {
-				//nearest shelf is subshelf
-				console.log("Movie is on Mainshelf - Index: " + $(this).index());
 				document.styleSheets[0].addRule('.card:after, .card:before', 'left: ' + offsetLeft + 'px;' + '');
 				$(this).parent().find('section').after(detailBox); //toggleClass('shiftdown');
 			}
@@ -151,7 +142,6 @@ function createEventListener() {
 // Document on load:
 $(function () {
 	socket.on('getQueryObjects', function(obj){
-		console.log(obj);
 		buildHTMLforQuery(obj.response.docs);
 	});
 	$("#searchValue").focus();

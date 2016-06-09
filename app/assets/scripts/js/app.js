@@ -5,8 +5,6 @@ $(document).ready(function() {
 		var searchValue = $('#searchValue').val();
 		socket.emit('searchValue', searchValue)
 	});
-
-	
 });
 
 
