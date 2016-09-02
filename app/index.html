@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MovieSearch</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO"/>
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
+	<meta name="author" content="FREEHTML5.CO"/>
+
+	<!-- Google Webfont -->
+	<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+
+	<!-- Google Webfont -->
+	<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+	<!-- Themify Icons -->
+	<link rel="stylesheet" href="assets/styles/themify-icons.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="assets/styles/bootstrap.css">
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="assets/styles/template-style.css">
+
+</head>
+
+<body class="fh5co-outer">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<header id="fh5co-header" role="banner">
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Mobile Toggle Menu Button -->
+				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar"
+					 aria-expanded="false" aria-controls="navbar"><i></i></a>
+				<a class="navbar-brand" href="index.html">Movie Search</a>
+			</div>
+		</div>
+	</nav>
+
+</header>
+
+<div id="fh5co-hero" style="background-image: url(assets/images/movie1.jpg)">
+	<!--<div class="overlay"></div>-->
+
+	<div class="container mainView">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="text">
+				<h1>Movie Search</h1>
+			</div>
+
+			<form action="#" class="form-subscribe" id="searchForm" onsubmit="return false;">
+				<div class="field">
+					<input type="text" id="searchValue" class="form-control" placeholder="type in a movie, actor or genre">
+					<input type="submit" class="btn btn-primary" id="searchButton">
+				</div>
+			</form>
+			<p></p>
+		</div>
+	</div>
+</div>
+
+<main role="main" id="fh5co-main">
+	<section class="grid-gallery">
+		<div class="container">
+			<div id="results"></div>
+		</div>
+	</section>
+</main>
+
+<footer role="contentinfo" id="fh5co-footer">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="copyright">
+					<p class="text-center">
+						<small>Based on a Free HTML5 Template by
+							<a href="http://freehtml5.co/">FREEHTML5.co</a> Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a><br> &copy;
+							2015 Display. All Rights Reserved.
+						</small>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- Go To Top -->
+<a href="#" class="fh5co-gotop"><i class="ti-shift-left"></i></a>
+<script type="text/javascript" src="socket.io/socket.io.js"></script>
+<script type="text/javascript" src="assets/scripts/js/app.js"></script>
+
+
+</body>
+</html>

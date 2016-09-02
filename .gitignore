@@ -1,5 +1,18 @@
+# system
+.DS_Store
+
 # ide
 .idea
 
-# dev-dependencies
+# solr
 solr-6.0.0
+
+# build
+.tmp
+tmp
+.sass-cache
+dist
+
+# dependencies
+node_modules
+bower_components

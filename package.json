@@ -1,0 +1,45 @@
+{
+  "name": "movie-search",
+  "version": "1.0.0",
+  "description": "single page app for search imdb movies based on solr search",
+  "main": "app/index.html",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "author": "Michael Andorfer, Nicola Deufemia, Vera Karl, Stefanie Habersatter",
+  "license": "MIT",
+  "browserify-shim": {
+    "bootstrap": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    }
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-eslint": "^6.0.4",
+    "babelify": "^7.3.0",
+    "bootstrap": "^3.3.5",
+    "browserify-shim": "^3.8.11",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^18.1.0",
+    "jquery": "^2.1.4",
+    "load-grunt-tasks": "^3.3.0",
+    "serve-static": "^1.10.0",
+    "time-grunt": "^1.2.2",
+    "uglifyify": "^3.0.1",
+    "should": "^9.0.0"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.5",
+    "solr-client": "^0.6.0"
+  }
+}
