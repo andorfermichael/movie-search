@@ -16,7 +16,7 @@ Discover movies and retrieve information about them.
 * setup [Node.js](https://nodejs.org/en/) on your server
 * setup [Apache Solr](http://lucene.apache.org/solr/) on your server
 * create a solr core (see docs folder, CORE_CREATION.md) with the `movies.json` from the data folder
-* configure [NGINX](https://www.nginx.com/resources/wiki/) on your server (see docs folder, nginx_sample.conf)
+* configure [NGINX](https://www.nginx.com/resources/wiki/) on your server (see docs folder, example.com)
 * move the content of dist/ to the application folder in /var/www/
 * move the package.json to the application folder and run `npm install`
 * change to `/var/www/appfolder/assets/scripts/node/` and run `node index.js` to start the application
